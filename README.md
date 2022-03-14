@@ -1,3 +1,3 @@
-## Hi! 👋🏾 Welcome to my Portfolio Page
----
-This **repository** is hosted on *[dansarpong.github.io](https:\\www.dansarpong.github.io)*
+<h1 align="center">Hi! 👋🏾 Welcome to my Portfolio Page</h1>
+</br>
+<h3 align="center"> This <i>Repository</i> is hosted on <a href="https:\\www.dansarpong.github.io">dansarpong.github.io</a></h3>
