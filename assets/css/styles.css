@@ -1,6 +1,7 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+
 /*==================== VARIABLES CSS ====================*/
 :root {
     --header-height: 3rem;
@@ -111,6 +112,7 @@ img {
   height: auto;
 }
 
+
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
@@ -132,6 +134,7 @@ img {
   text-align: center;
 }
 
+
 /*==================== LAYOUT ====================*/
 .container {
   max-width: 768px;
@@ -152,6 +155,7 @@ img {
   z-index: var(--z-fixed);
   background-color: var(--body-color);
 }
+
 
 /*==================== NAV ====================*/
 .nav{
@@ -319,6 +323,7 @@ img {
   font-size: 1.25rem;
 }
 
+
 /*==================== BUTTONS ====================*/
 .button{
   display: inline-block;
@@ -359,6 +364,7 @@ img {
   color: var(--first-color-alt);
 }
 
+
 /*==================== ABOUT ====================*/
 .about__img{
   width: 200px;
@@ -398,6 +404,7 @@ img {
   display: flex;
   justify-content: center;
 }
+
 
 /*==================== SKILLS ====================*/
 .skills__container{
@@ -512,6 +519,7 @@ img {
   transform: rotate(-180deg);
 }
 
+
 /*==================== QUALIFICATION ====================*/
 .qualification__tabs{
   display: flex;
@@ -583,6 +591,7 @@ img {
 .qualification__button.qualification__active{
   color: var(--first-color);
 }
+
 
 /*==================== SERVICES ====================*/
 .services__container{
@@ -683,7 +692,67 @@ img {
   visibility: visible;
 }
 
+
 /*==================== PORTFOLIO ====================*/
+.portfolio__container{
+  overflow: initial;
+}
+
+.portfolio__content{
+  padding: 0 1.5rem;
+}
+
+.portfolio__img{
+  width: 265px;
+  border-radius: .5rem;
+  justify-self: center;
+}
+
+.portfolio__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.portfolio__description{
+  margin-bottom: var(--mb-0-75);
+}
+
+.portfolio__button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+  content: '';
+}
+
+.swiper-portfolio-icon{
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.swiper-button-prev{
+  left: -.5rem;
+}
+
+.swiper-button-next{
+  right: -.5rem;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: -2.5rem;
+}
+
+.swiper-pagination-bullet{
+  background-color: var(--first-color);
+}
+
+
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination-bullet{
+  outline: none;
+}
 
 
 /*==================== PROJECT IN MIND ====================*/
