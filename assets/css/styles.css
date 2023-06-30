@@ -502,24 +502,28 @@ img {
   background-color: var(--first-color);
 }
 
-.skills__cpp{
+.skills__electronics{
+  width: 80%;
+}
+
+.skills__arduino{
+  width: 80%;
+}
+
+.skills__rpi{
   width: 60%;
-}
-
-.skills__java{
-  width: 50%;
-}
-
-.skills__c-sharp{
-  width: 20%;
-}
-
-.skills__c{
-  width: 70%;
 }
 
 .skills__python{
   width: 80%;
+}
+
+.skills__cpp{
+  width: 70%;
+}
+
+.skills__java{
+  width: 50%;
 }
 
 .skills__jupyter{
