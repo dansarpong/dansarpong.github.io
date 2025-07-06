@@ -69,11 +69,13 @@
     border-radius: 1.5rem 1.5rem 0 0;
     transition: .3s;
   }
-}
 
-.nav__list{
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  .nav__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
 }
 
 .nav__link{
