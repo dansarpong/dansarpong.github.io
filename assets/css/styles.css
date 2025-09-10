@@ -1180,3 +1180,43 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
  }
+
+/* Add custom styles for new skills bar colors and icons if needed */
+.skills__percentage[style] {
+  min-width: 10%;
+  height: 5px;
+  border-radius: .25rem;
+  display: block;
+}
+
+/* Ensure portfolio images are responsive */
+.portfolio__img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: .5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive tweaks for contact info blocks */
+@media screen and (max-width: 600px) {
+  .contact__information {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  .portfolio__img {
+    max-width: 100%;
+  }
+}
+
+/* Responsive tweaks for about info blocks */
+@media screen and (max-width: 600px) {
+  .about__info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
