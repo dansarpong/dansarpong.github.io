@@ -1,34 +1,49 @@
+// deploy.js
 import { publish } from 'gh-pages';
 import fs from 'fs';
 import path from 'path';
+import url from 'url';
 
-// Ensure CNAME exists in dist
+// Fix for ES modules __dirname
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Copy CNAME if exists
 if (fs.existsSync('CNAME')) {
-  fs.copyFileSync('CNAME', 'dist/CNAME');
+  fs.copyFileSync('CNAME', path.join('dist', 'CNAME'));
   console.log('CNAME file copied to dist folder');
 }
 
-// Ensure favicon files are copied
+// Copy favicons from public/
 const faviconFiles = ['favicon.ico', 'favicon.svg'];
 faviconFiles.forEach(file => {
-  const srcPath = path.join('public', file);
-  const destPath = path.join('dist', file);
-  if (fs.existsSync(srcPath)) {
-    fs.copyFileSync(srcPath, destPath);
+  const src = path.join('public', file);
+  const dest = path.join('dist', file);
+  if (fs.existsSync(src)) {
+  fs.copyFileSync(src, dest);
     console.log(`${file} copied to dist folder`);
   }
 });
 
-// Deploy to GitHub Pages
+// Deploy using GITHUB_TOKEN automatically injected by GitHub Actions
+const repoURL = process.env.GITHUB_TOKEN
+  ? `https://${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git`
+  : 'https://github.com/dansarpong/dansarpong.github.io.git'; // fallback (won't work on CI)
+
 publish('dist', {
   branch: 'gh-pages',
-  repo: 'https://github.com/dansarpong/dansarpong.github.io.git',
-  message: 'Deploy to GitHub Pages with favicon fix',
-  dotfiles: true, // Include dotfiles like .nojekyll
+  repo: repoURL,
+  message: `Deploy: ${new Date().toISOString()} - ${process.env.GITHUB_SHA?.slice(0, 7)}}`,
+  dotfiles: true,
+  user: {
+    name: 'github-actions[bot]',
+    email: 'github-actions[bot]@users.noreply.github.com'
+  }
 }, (err) => {
   if (err) {
     console.error('Error deploying to GitHub Pages:', err);
-    return;
+    process.exit(1);
+  } else {
+    console.log('Successfully deployed to GitHub Pages!');
   }
-  console.log('Successfully deployed to GitHub Pages!');
 });
